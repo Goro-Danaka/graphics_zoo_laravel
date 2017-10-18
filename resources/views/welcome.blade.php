@@ -1,48 +1,35 @@
 <html>
 	<head>
-		<title>Laravel</title>
+		<title>
+            <?php
+            if (isset($page_title)):
+                echo $page_title;
+            else:
+                echo $this->fetch('title');
+            endif;
+            ?>            
+        </title>
 		
 		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
-
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
-				color: #B0BEC5;
-				display: table;
-				font-weight: 100;
-				font-family: 'Lato';
-			}
-
-			.container {
-				text-align: center;
-				display: table-cell;
-				vertical-align: middle;
-			}
-
-			.content {
-				text-align: center;
-				display: inline-block;
-			}
-
-			.title {
-				font-size: 96px;
-				margin-bottom: 40px;
-			}
-
-			.quote {
-				font-size: 24px;
-			}
-		</style>
-	</head>
+		<script type="text/javascript" href="{{ asset('js/jquery.js') }}"></script>
+		
+		@include('welcome.css')
+		@include('welcome.js')
+		@include('welcome.analytic')
+	</head>	
 	<body>
-		<div class="container">
+		
+		<!-- <div class="container">
 			<div class="content">
 				<div class="title">Laravel 5</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
 			</div>
-		</div>
+		</div> -->
+		<div class="wrap">
+			@include('welcome.header')
+			@yield('content')
+			@include('welcome.footer')
+			@include('welcome.js_bottom')
+		</div>		
 	</body>
 </html>

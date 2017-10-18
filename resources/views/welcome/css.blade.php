@@ -1,0 +1,16 @@
+<link href="{{ asset('/css/welcome/bwg_frontend.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/font-awesome.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/jquery.mCustomScrollbar.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/sumoselect.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/magnific-popup.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/streama.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/webfonts.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/icons.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/icons_second.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/user_style.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/slick.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/slick-theme.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/style.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/responsive.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/welcome/custom.css') }}" rel="stylesheet">

@@ -1,0 +1,10 @@
+<script type="text/javascript" src="{{ asset('js/welcome/comment-reply.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/welcome/jquery.fitvids.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/welcome/jquery.magnific-popup.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/welcome/slick.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/welcome/jquery.mixitup.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/welcome/mogul-framework-blog.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/welcome/mogul-framework.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/welcome/streama.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/welcome/wp-embed.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/welcome/main.js') }}"></script>

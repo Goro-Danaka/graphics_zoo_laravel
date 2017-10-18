@@ -1,7 +1,7 @@
 @extends('welcome')
 @section('content')
 
-<!-- Main Area Starts -->
+<!-- Main Area Startsa -->
 		<main>
 			
 			<!-- Portfolio Header Section Starts -->

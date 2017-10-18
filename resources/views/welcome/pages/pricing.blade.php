@@ -1,9 +1,5 @@
-<?php
-	
-	use Cake\Routing\Router;
-	
-	$form_action = Router::url(['controller' => 'Pages', 'action' => 'signup'], TRUE);
-?>
+@extends('welcome')
+@section('content')
 <!-- Intro -->
 <!-- Pricing Header Section Starts -->
 <main>
@@ -53,12 +49,12 @@
 					<div class="monthly front">
 						<div class="pricing-plan-wrapper">
 							<div class="pricing-plan-header">
-								<p class="pricing-plan-price"><span>$</span><?= STRIPE_MONTH_SILVER_PLAN_AMOUNT / 100 ?></p>
+								<p class="pricing-plan-price"><span>$</span><?= config('constants.STRIPE_MONTH_SILVER_PLAN_AMOUNT') / 100 ?></p>
 								<p class="pricing-plan-duration">/month</p>
 								<h3 class="heading-pricing-plan">Monthly Silver Plan</h3>
 							</div>
 							<div class="pricing-plan-body">
-								<img src="<?= SITE_IMAGES_URL?>img/3day.png" alt="" />
+								<img src="{{ assert('img/3day.png') }}" alt="" />
 								<ul class="pricing-plan-feature">
 									<li>14-Day 100% Risk-Free  Guarantee</li>
 									<li>No Contract</li>
@@ -68,11 +64,10 @@
 									<li>Quality Designers</li>
 									<li>Dedicated Support</li>
 								</ul>
-								<?= $this->Form->create('', ['url' => $form_action, 'id' => 'form-validation', 'class' => 'plan_form', 'type' => 'put']); ?>
-								<?php $this->Form->templates(NOWRAP_TEMPLATE); ?>
-								<?= $this->Form->control('selected_subscrion_plan', ['type' => 'hidden', 'class' => 'form-control', 'label' => FALSE, 'value' => STRIPE_MONTH_SILVER_PLAN_ID]) ?>
-								<?= $this->Form->control('GET STARTED TODAY', ['type' => 'submit', 'class' => 'pricing-plan-btn cd-select1', 'label' => FALSE]) ?>
-								<?= $this->Form->end(); ?>
+								{!! Form::open(['route' => 'welcome.signup']) !!}
+    							{!! Form::hidden('selected_subscrion_plan', 'hidden', ['class' => 'form-control', 'label' => FALSE, 'value' => config('constants.STRIPE_MONTH_SILVER_PLAN_ID')]); !!}
+    							{!! Form::submit('GET STARTED TODAY', ['type' => 'submit', 'class' => 'pricing-plan-btn cd-select1', 'label' => FALSE]); !!}
+								{!! Form::close() !!}
 								
 								<!--button class="pricing-plan-btn">GET STARTED TODAY</button-->
 								
@@ -86,12 +81,12 @@
 					<div class=" monthly front">
 						<div class="pricing-plan-wrapper">
 							<div class="pricing-plan-header">
-								<p class="pricing-plan-price"><span>$</span><?= STRIPE_MONTH_GOLDEN_PLAN_AMOUNT / 100 ?></p>
+								<p class="pricing-plan-price"><span>$</span><?= config('constants.STRIPE_MONTH_GOLDEN_PLAN_AMOUNT') / 100 ?></p>
 								<p class="pricing-plan-duration">/month</p>
 								<h3 class="heading-pricing-plan">Monthly Golden Plan</h3>
 							</div>
 							<div class="pricing-plan-body">
-								<img src="<?= SITE_IMAGES_URL?>img/1day.png" alt="" />
+								<img src="{{ assert('img/1day.png') }}" alt="" />
 								<ul class="pricing-plan-feature">
 									<li>14-Day 100% Risk-Free  Guarantee</li>
 									<li>No Contract</li>
@@ -101,11 +96,11 @@
 									<li>Quality Designers</li>
 									<li>Dedicated Support</li>
 								</ul>
-								<?= $this->Form->create('', ['url' => $form_action, 'id' => 'form-validation', 'class' => 'plan_form', 'type' => 'put']); ?>
-								<?php $this->Form->templates(NOWRAP_TEMPLATE); ?>
-								<?= $this->Form->control('selected_subscrion_plan', ['type' => 'hidden', 'class' => 'form-control', 'label' => FALSE, 'value' => STRIPE_MONTH_GOLDEN_PLAN_ID]) ?>
-								<?= $this->Form->control('GET STARTED TODAY', ['type' => 'submit', 'class' => 'pricing-plan-btn cd-select1', 'label' => FALSE]) ?>
-								<?= $this->Form->end(); ?>
+								{!! Form::open(['route' => 'welcome.signup']) !!}
+    							{!! Form::hidden('selected_subscrion_plan', 'hidden', ['type' => 'hidden', 'class' => 'form-control', 'label' => FALSE, 'value' => config('constants.STRIPE_MONTH_GOLDEN_PLAN_ID')]); !!}
+    							{!! Form::submit('GET STARTED TODAY', ['type' => 'submit', 'class' => 'pricing-plan-btn cd-select1', 'label' => FALSE]); !!}
+								{!! Form::close() !!}
+
 							</div>
 							
 						</div>
@@ -113,11 +108,7 @@
 					</div>
 					
 					</div>	
-					
-					
-					
-					
-					
+				
 					
 					
 					<!----yearly-------->
@@ -126,12 +117,12 @@
 					<div class="yearly back">
 						<div class="pricing-plan-wrapper">
 							<div class="pricing-plan-header1">
-								<p class="pricing-plan-price"><span>$</span><?= STRIPE_YEAR_SILVER_PLAN_AMOUNT / 100 ?></p>
+								<p class="pricing-plan-price"><span>$</span><?= config('constants.STRIPE_YEAR_SILVER_PLAN_AMOUNT') / 100 ?></p>
 								<p class="pricing-plan-duration">/year</p>
 								<h3 class="heading-pricing-plan">Yearly Silver Plan</h3>
 							</div>
 							<div class="pricing-plan-body">
-								<img src="<?= SITE_IMAGES_URL?>img/3day.png" alt="" />
+								<img src="{{ assert('img/3day.png') }}" alt="" />
 								<ul class="pricing-plan-feature">
 									<li>14-Day Free  Guarantee</li>
 									<li>No Contract</li>
@@ -141,11 +132,11 @@
 									<li>Quality Designers</li>
 									<li>Dedicated Support</li>
 								</ul>
-								<?= $this->Form->create('', ['url' => $form_action, 'id' => 'form-validation', 'class' => 'plan_form', 'type' => 'put']); ?>
-								<?php $this->Form->templates(NOWRAP_TEMPLATE); ?>
-								<?= $this->Form->control('selected_subscrion_plan', ['type' => 'hidden', 'class' => 'form-control', 'label' => FALSE, 'value' => STRIPE_YEAR_SILVER_PLAN_ID]) ?>
-								<?= $this->Form->control('GET STARTED TODAY', ['type' => 'submit', 'class' => 'pricing-plan-btn cd-select1', 'label' => FALSE]) ?>
-								<?= $this->Form->end(); ?>
+
+								{!! Form::open(['route' => 'welcome.signup']) !!}
+    								{!! Form::hidden('selected_subscrion_plan', 'hidden', ['class' => 'form-control', 'label' => FALSE, 'value' => config('constants.STRIPE_YEAR_SILVER_PLAN_ID')]); !!}
+    								{!! Form::submit('GET STARTED TODAY', ['type' => 'submit', 'class' => 'pricing-plan-btn cd-select1', 'label' => FALSE]); !!}
+								{!! Form::close() !!}
 							</div>
 							
 						</div>
@@ -158,12 +149,12 @@
 					<div class="yearly back">
 						<div class="pricing-plan-wrapper">
 							<div class="pricing-plan-header1">
-								<p class="pricing-plan-price"><span>$</span><?= STRIPE_YEAR_GOLDEN_PLAN_AMOUNT / 100 ?></p>
+								<p class="pricing-plan-price"><span>$</span><?= config('constants.STRIPE_YEAR_GOLDEN_PLAN_AMOUNT')  / 100 ?></p>
 								<p class="pricing-plan-duration">/year</p>
 								<h3 class="heading-pricing-plan">Yearly Golden Plan</h3>
 							</div>
 							<div class="pricing-plan-body">
-								<img src="<?= SITE_IMAGES_URL?>img/1day.png" alt="" />
+								<img src="{{ assert('img/1day.png') }}" alt="" />
 								<ul class="pricing-plan-feature">
 									<li>14-Day 100% Risk-Free  Guarantee</li>
 									<li>No Contract</li>
@@ -173,11 +164,12 @@
 									<li>Quality Designers</li>
 									<li>Dedicated Support</li>
 								</ul>
-								<?= $this->Form->create('', ['url' => $form_action, 'id' => 'form-validation', 'class' => 'plan_form', 'type' => 'put']); ?>
-								<?php $this->Form->templates(NOWRAP_TEMPLATE); ?>
-								<?= $this->Form->control('selected_subscrion_plan', ['type' => 'hidden', 'class' => 'form-control', 'label' => FALSE, 'value' => STRIPE_YEAR_GOLDEN_PLAN_ID]) ?>
-								<?= $this->Form->control('GET STARTED TODAY', ['type' => 'submit', 'class' => 'pricing-plan-btn cd-select1', 'label' => FALSE]) ?>
-								<?= $this->Form->end(); ?>
+
+								{!! Form::open(['route' => 'welcome.signup']) !!}
+    								{!! Form::hidden('selected_subscrion_plan', 'hidden', ['class' => 'form-control', 'label' => FALSE, 'value' => config('constants.STRIPE_YEAR_GOLDEN_PLAN_ID')]); !!}
+    								{!! Form::submit('GET STARTED TODAY', ['type' => 'submit', 'class' => 'pricing-plan-btn cd-select1', 'label' => FALSE]); !!}
+								{!! Form::close() !!}
+
 							</div>
 							
 						</div>
@@ -198,7 +190,7 @@
 		<div class="container">
 			<div class="col-md-12 col-xs-12 text-center">
 				<span>OR</span>
-				<a href="<?= Router::url(['controller' => 'Pages', 'action' => 'signup', 'prefix' => NULL], TRUE) ?>" class="pricing-bottom-btn btn">TRY RISK FREE FOR 14 DAYS</a>
+				<a href="{{ route('welcome.signup') }}" class="pricing-bottom-btn btn">TRY RISK FREE FOR 14 DAYS</a>
 			</div>
 		</div>
 	</section>
@@ -216,16 +208,9 @@
 <script>fbq('track', 'Pricing');</script>
 
 
-<?= $this->start('css'); ?>
-<?php // echo $this->Html->css('../assets/pricing-tables-with-switcher/css/reset.css'); ?>
-<?= $this->Html->css('../assets/pricing-tables-with-switcher/css/style.css'); ?>
-
-
-<?= $this->end('css'); ?>
-
-<?= $this->start('script'); ?>
-<?= $this->Html->script('../assets/pricing-tables-with-switcher/js/modernizr.js'); ?>
-<?= $this->Html->script('../assets/pricing-tables-with-switcher/js/main.js'); ?>
+<link href="{{ asset('/css/welcome/pricing-tables-with-switcher/style.css') }}" rel="stylesheet">
+<script type="text/javascript" href="{{ asset('/js/welcome/pricing-tables-with-switcher/modernizr.css') }}"></script>
+<script type="text/javascript" href="{{ asset('/js/welcome/pricing-tables-with-switcher/main.css') }}"></script>
 
 <script>
 function flipped(value) {
@@ -246,6 +231,4 @@ jQuery('.pricing-options-btn').click(function(){
 });
 	
 </script>
-
-
-<?= $this->end('script'); ?>
+@endsection

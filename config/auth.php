@@ -64,4 +64,24 @@ return [
 		'expire' => 60,
 	],
 
+	'guards' => [ 
+		'web' => [ 'driver' => 'session', 'provider' => 'users', ],
+		'api' => [
+			        'driver' => 'token',
+			        'provider' => 'users',
+			    ],
+    	'admin' => [
+			          'driver' => 'session',
+			          'provider' => 'users',
+			    ],
+	],
+
+	'defaults' => [ 'guard' => 'admin', 'passwords' => 'admin',],
+
+	'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+        ]
+    ],
 ];

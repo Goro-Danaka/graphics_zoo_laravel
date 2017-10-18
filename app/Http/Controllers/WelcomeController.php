@@ -101,10 +101,9 @@ class WelcomeController extends Controller {
         return view('welcome/pages/portfolio', ['portfolios' => $portfolios, 'portfolio_categories' => $portfolio_categories, 'page_title' => $page_title]);
     }
 
-    public function pricing() {
-        $this->viewBuilder()->setLayout('front_end');
+    public function pricing() {        
         $page_title = 'Pricing';
-        $this->set(compact(['page_title']));
+        return view('welcome/pages/pricing', ['page_title' => $page_title]);        
     }
 
     public function blog() {

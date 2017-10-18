@@ -1,3 +1,6 @@
+@extends('welcome')
+@section('content')
+
 <!-- Main Area Starts -->
 		<main>
 			
@@ -97,3 +100,4 @@
 		
 
 <script>fbq('track', 'FAQ');</script>
+@endsection

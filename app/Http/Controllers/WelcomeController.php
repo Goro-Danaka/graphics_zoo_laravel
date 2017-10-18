@@ -216,9 +216,8 @@ class WelcomeController extends Controller {
     }
 
     public function faq() {
-        $this->viewBuilder()->setLayout('front_end');
         $page_title = 'FAQ';
-        $this->set(compact(['page_title']));
+        return view('welcome/pages/faq', ['page_title' => $page_title]);        
     }
 
     public function contactus() {
